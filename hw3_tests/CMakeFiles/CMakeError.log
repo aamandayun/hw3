@@ -1,0 +1,135 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_556c8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_556c8.dir/build.make CMakeFiles/cmTC_556c8.dir/build
+make[1]: Entering directory '/home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_556c8.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_556c8.dir/CheckSymbolExists.c.o   -c /home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_556c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_556c8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_556c8.dir/CheckSymbolExists.c.o  -o cmTC_556c8 
+CMakeFiles/cmTC_556c8.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_556c8.dir/build.make:97: recipe for target 'cmTC_556c8' failed
+make[1]: *** [cmTC_556c8] Error 1
+make[1]: Leaving directory '/home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_556c8/fast' failed
+make: *** [cmTC_556c8/fast] Error 2
+
+File /home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_676ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_676ad.dir/build.make CMakeFiles/cmTC_676ad.dir/build
+make[1]: Entering directory '/home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_676ad.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_676ad.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_676ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_676ad.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_676ad.dir/CheckFunctionExists.c.o  -o cmTC_676ad -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_676ad.dir/build.make:97: recipe for target 'cmTC_676ad' failed
+make[1]: *** [cmTC_676ad] Error 1
+make[1]: Leaving directory '/home/codio/workspace/hw3/hw3_tests/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_676ad/fast' failed
+make: *** [cmTC_676ad/fast] Error 2
+
+
+Checking whether C++ compiler has '__int64' failed to compile with the following output:
+Change Dir: /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3073d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3073d.dir/build.make CMakeFiles/cmTC_3073d.dir/build
+make[1]: Entering directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3073d.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++  -DTEST_KWSYS_CXX_HAS___INT64  -Wall    -o CMakeFiles/cmTC_3073d.dir/kwsysPlatformTestsCXX.cxx.o -c /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:24:1: error: ‘__int64’ does not name a type; did you mean ‘__amd64’?
+ __int64 f(__int64 n)
+ ^~~~~~~
+ __amd64
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:30:3: error: ‘__int64’ was not declared in this scope
+   __int64 n = 0;
+   ^~~~~~~
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:30:3: note: suggested alternative: ‘__amd64’
+   __int64 n = 0;
+   ^~~~~~~
+   __amd64
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:31:29: error: ‘n’ was not declared in this scope
+   return static_cast<int>(f(n));
+                             ^
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:31:27: error: ‘f’ was not declared in this scope
+   return static_cast<int>(f(n));
+                           ^
+CMakeFiles/cmTC_3073d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3073d.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_3073d.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3073d/fast' failed
+make: *** [cmTC_3073d/fast] Error 2
+
+
+Checking whether CXX compiler has environ in stdlib.h failed to compile with the following output:
+Change Dir: /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fee09/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fee09.dir/build.make CMakeFiles/cmTC_fee09.dir/build
+make[1]: Entering directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fee09.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++  -DTEST_KWSYS_CXX_HAS_ENVIRON_IN_STDLIB_H  -Wall    -o CMakeFiles/cmTC_fee09.dir/kwsysPlatformTestsCXX.cxx.o -c /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:196:13: error: ‘environ’ was not declared in this scope
+   char* e = environ[0];
+             ^~~~~~~
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:196:13: note: suggested alternative: ‘union’
+   char* e = environ[0];
+             ^~~~~~~
+             union
+CMakeFiles/cmTC_fee09.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_fee09.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_fee09.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fee09/fast' failed
+make: *** [cmTC_fee09/fast] Error 2
+
+
+Checking whether CXX compiler struct stat has st_mtimespec member failed to compile with the following output:
+Change Dir: /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f1395/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f1395.dir/build.make CMakeFiles/cmTC_f1395.dir/build
+make[1]: Entering directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f1395.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++  -DTEST_KWSYS_CXX_STAT_HAS_ST_MTIMESPEC  -Wall    -o CMakeFiles/cmTC_f1395.dir/kwsysPlatformTestsCXX.cxx.o -c /home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:57:15: error: ‘struct stat’ has no member named ‘st_mtimespec’; did you mean ‘st_mtim’?
+   (void)stat1.st_mtimespec.tv_sec;
+               ^~~~~~~~~~~~
+               st_mtim
+/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/kwsysPlatformTestsCXX.cxx:58:15: error: ‘struct stat’ has no member named ‘st_mtimespec’; did you mean ‘st_mtim’?
+   (void)stat1.st_mtimespec.tv_nsec;
+               ^~~~~~~~~~~~
+               st_mtim
+CMakeFiles/cmTC_f1395.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f1395.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_f1395.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/codio/workspace/hw3/hw3_tests/testing_utils/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f1395/fast' failed
+make: *** [cmTC_f1395/fast] Error 2
+
+

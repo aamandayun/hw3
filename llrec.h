@@ -4,6 +4,9 @@
 #define NULL 0
 #endif
 
+
+using namespace std;
+
 /**
  * Node struct for both problems
  */
@@ -83,7 +86,24 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+    //recursive
+    //remove elements ofa single linked list
+    //delete removed elements
 
+    if(head==nullptr){
+      return nullptr;
+    }
+
+    head->next = llfilter(head->next, pred);
+
+    if(pred(head->val)){
+      Node* temp = head;
+      head = head->next;
+      delete temp;
+    }
+
+    return head;
+    
 
 }
 
